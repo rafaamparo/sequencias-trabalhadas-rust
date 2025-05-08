@@ -69,14 +69,14 @@ mod tests {
 
     #[test]
     fn test_new_desenvolvedor() {
-        let dev = Desenvolvedor::new("Carlos".to_string());
-        assert_eq!(dev.nome, "Carlos");
+        let dev = Desenvolvedor::new("Joao".to_string());
+        assert_eq!(dev.nome, "Joao");
         assert!(dev.slots_semana.is_empty());
     }
 
     #[test]
     fn test_adicionar_slot() {
-        let mut dev = Desenvolvedor::new("Carlos".to_string());
+        let mut dev = Desenvolvedor::new("Joao".to_string());
         let slot = SlotSemanal {
             dia_semana: 1,
             hora_inicio: 9,
@@ -91,7 +91,7 @@ mod tests {
 
     #[test]
     fn test_horas_interruptas_sem_slots() {
-        let dev = Desenvolvedor::new("Carlos".to_string());
+        let dev = Desenvolvedor::new("Joao".to_string());
         let (horas, num_slots) = dev.horas_interruptas_trabalhadas();
         assert_eq!(horas, 0);
         assert_eq!(num_slots, 0);
@@ -99,7 +99,7 @@ mod tests {
 
     #[test]
     fn test_horas_interruptas_com_slots_consecutivos() {
-        let mut dev = Desenvolvedor::new("Carlos".to_string());
+        let mut dev = Desenvolvedor::new("Joao".to_string());
 
         // Adicionar 3 slots consecutivos no mesmo dia
         dev.adicionar_slot(SlotSemanal {
@@ -132,7 +132,7 @@ mod tests {
 
     #[test]
     fn test_horas_interruptas_com_slots_nao_consecutivos() {
-        let mut dev = Desenvolvedor::new("Carlos".to_string());
+        let mut dev = Desenvolvedor::new("Joao".to_string());
 
         // Adicionar slots não consecutivos
         dev.adicionar_slot(SlotSemanal {
